@@ -1,5 +1,5 @@
 # VLMSREC
-
+```
 VLMSREC/
 │
 ├── data/
@@ -10,13 +10,13 @@ VLMSREC/
 │       └── meta_<dataset_name>.json
 ├── README.md
 ├── src
-│	├──get_text_feat.py              # Script to generate text embeddings
-│	├──README.md
+│	├──gen_image_feat.py              # Script to generate text embeddings
+│	├──vlm2text.py
 │   └─requirements.txt
 ├───main.py
 ├───vlm2text.py
 └───img2text.py
-
+```
 
 ### 2. Preprocess
 
