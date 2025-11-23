@@ -24,7 +24,7 @@ mask_weight_g: [0.0001, 0.001]
 align_weight: [0.1]
 
 #temp: [0.2, 0.4, 0.8]
-temp: [0.2, 0.4, 0.6]
+temp: [0.2]
 #temp: [0.1]
 
 hyper_parameters: ["reg_weight", "learning_rate", 'dropout', 'mask_weight_f', 'mask_weight_g', 'align_weight', 'temp']
