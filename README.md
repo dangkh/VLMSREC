@@ -13,16 +13,26 @@ VLMSREC/
 │	├──gen_image_feat.py              # Script to generate text embeddings
 │	├──vlm2text.py
 │   └─requirements.txt
-├───main.py
-├───vlm2text.py
-└───img2text.py
+└───main.py
 ```
 
 ### 2. Preprocess
 
-#### Generate text features for images
+#### VLM read images
 
 Vlm generate feature for image, edit src/config.py to change the dataset and vlm model.
 ```sh
 python src/vlm2feat.py
 ```
+#### Generate image features 
+
+```sh
+python src/gen_image_feat.py
+```
+
+### 2. Preprocess
+```sh
+python src/main.py -d baby -m DRAGON
+```
+
+baby/sport ... DRAGON/FREEDOM/MENTOR

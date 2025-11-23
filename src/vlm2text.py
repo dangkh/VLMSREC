@@ -13,7 +13,6 @@ from io import BytesIO
 from unsloth import FastVisionModel
 import gzip
 import ast
-from config import TrainConfig 
 from tqdm import tqdm
 import yaml
 import torch
@@ -102,6 +101,12 @@ def getDescribe_unsloth(vlmModel, tokenizer, link = None, title = None, cfg = No
     generated_tokens = output[0][inputs["input_ids"].shape[-1]:]
     output_text = tokenizer.decode(generated_tokens, skip_special_tokens=True).strip()
     return output_text
+
+class TrainConfig:
+    random_seed: int = 1009
+    template: str = 'title'# [plain, title, detail]
+    vlmModel: str = 'qwen'# [qwen, lama, gema, lava]
+    data: str = 'baby'# ["baby", "sport", "cloth"]
 
 cfg = TrainConfig()
 print(cfg)
