@@ -11,6 +11,7 @@ import requests
 from PIL import Image
 from io import BytesIO
 from unsloth import FastVisionModel
+from peft import PeftModel
 import gzip
 import ast
 from tqdm import tqdm
@@ -219,8 +220,9 @@ with open("src/prompts.yaml", "r") as f:
 
 
 if cfg.vlmModel == 'qwen':
-    model = Qwen2_5_VLForConditionalGeneration.from_pretrained(
+    base_model = Qwen2_5_VLForConditionalGeneration.from_pretrained(
       "Qwen/Qwen2.5-VL-3B-Instruct", torch_dtype="auto", device_map="auto")
+    model = PeftModel.from_pretrained(base_model, "./Art/Qwen2.5-VL-3B-Instruct-ProductDesc-euclide-art", torch_dtype="auto", device_map="auto")
     model = model.to(device)
     processor = AutoProcessor.from_pretrained("Qwen/Qwen2.5-VL-3B-Instruct")
 elif cfg.vlmModel == 'lama':
